@@ -1,0 +1,84 @@
+/* 主页底部导航栏 */
+.floating-tab {
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(245, 245, 245, 0.95) 100%
+    );
+    border-radius: 24px;
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    padding: 4px;
+    height: auto !important;
+    min-height: unset !important;
+    width: 91% !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
+}
+
+/* 移除middle group的原有样式 */
+.floating-tab > div {
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* 导航栏按键，统一样式 */
+.floating-tab button {
+    --w: 48px;
+    --h: 48px;
+    --r: 12px;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    position: relative;
+    filter: none;
+    width: var(--w) !important;
+    height: var(--h) !important;
+    border-radius: var(--r) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+}
+/* 按钮hover效果 */
+/* 按钮hover效果 - 填满整个按钮区域并添加阴影 */
+.floating-tab button:hover {
+    background: rgba(154, 155, 162, 0.4) !important;
+    border-radius: var(--r) !important;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+    transform: scale(1.05) !important;
+}
+/* 按钮active效果 - 按压反馈 */
+.floating-tab button:active {
+    background: rgba(205, 205, 208, 0.6) !important;
+    border-radius: var(--r) !important;
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.15),
+        inset 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    transform: scale(0.95) !important;
+}
+
+/* 细竖线分隔 */
+.floating-tab > button:not(:last-child)::after,
+.floating-tab > div > button::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 24px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* 中间添加按钮的+号改成黑色并缩小 */
+.floating-tab > div > button:nth-child(2) i {
+    color: black !important;
+    transform: scale(0.7);
+}
